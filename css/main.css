@@ -1,0 +1,316 @@
+:root {
+  --dark: #262A3F;
+  --pink: #F1897B;
+  --green: #85BBB1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body, h1, h2, p, blockquote {
+  margin: 0;
+}
+
+body {
+  color: var(--dark);
+  font: 300 18px/1.5 "Lato", sans-serif;
+}
+
+.container {
+  width: calc(100% - 40px);
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title {
+  font: 400 40px/1.2 "Playfair Display", Georgia, serif;
+}
+
+.section-title em {
+  color: var(--green);
+  font-weight: 400;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  isolation: isolate;
+  color: var(--pink);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 9px;
+  width: 100%;
+  height: 13px;
+  background: rgba(241, 137, 123, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover::after {
+  transform: translate(-9px, -3px);
+  background: rgba(241, 137, 123, 0.5);
+}
+
+.header {
+  position: absolute;
+  z-index: 2;
+  top: 30px;
+  width: 100%;
+  padding: 24px 0;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(9px);
+}
+
+.logo img {
+  display: block;
+  width: 108px;
+  filter: brightness(0);
+}
+
+.menu {
+  display: flex;
+  gap: 42px;
+}
+
+.menu a {
+  color: var(--dark);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.menu a:hover {
+  border-color: var(--pink);
+}
+
+.hero {
+  min-height: 800px;
+  padding-top: 260px;
+  background: url("../assets/img/background_first_screen.png") center top/cover no-repeat;
+}
+
+.hero .section-title {
+  max-width: 640px;
+  font-size: 44px;
+}
+
+.hero p {
+  max-width: 440px;
+  margin-top: 20px;
+}
+
+.hero .button {
+  margin-top: 48px;
+}
+
+.info, .promises {
+  display: flex;
+  align-items: center;
+}
+
+.info {
+  position: relative;
+  margin-top: -130px;
+  margin-bottom: 120px;
+}
+
+.info > img, .promises > img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.info > img {
+  width: 570px;
+  height: 670px;
+}
+
+.panel {
+  width: 770px;
+  min-height: 580px;
+  flex-shrink: 0;
+  margin-left: -170px;
+  padding: 30px;
+  gap: 30px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.stats {
+  width: 260px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.stats > div + div {
+  margin-top: 35px;
+}
+
+.number {
+  font: 400 62px/1.2 "Playfair Display", Georgia, serif;
+}
+
+.number span {
+  color: var(--green);
+  font-size: 40px;
+}
+
+.details p + p {
+  margin-top: 30px;
+}
+
+.details .button {
+  margin-top: 35px;
+}
+
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px 30px;
+  margin-bottom: 120px;
+}
+
+.benefits article {
+  width: calc(50% - 15px);
+  padding: 30px 35px 0;
+  border-top: 1px solid #E4E4E4;
+}
+
+.benefits p {
+  margin-top: 30px;
+}
+
+.quote {
+  min-height: 400px;
+  margin-bottom: 120px;
+  padding: 90px 100px;
+  color: #fff;
+  background: var(--dark) url("../assets/img/quote-background.png") center/cover no-repeat;
+}
+
+.quote blockquote {
+  max-width: 760px;
+}
+
+.quote p {
+  font-size: 32px;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
+.quote cite {
+  display: block;
+  margin-top: 40px;
+  font: italic 400 20px "Playfair Display", Georgia, serif;
+}
+
+.promises {
+  margin-bottom: 120px;
+}
+
+.promises > img {
+  width: 600px;
+  height: 540px;
+}
+
+.promises .panel {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 130px 90px;
+  gap: 55px 100px;
+  width: 770px;
+  min-height: 450px;
+  margin-left: -200px;
+  padding: 85px 0 85px 70px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.promises .section-title {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.promises article p + p {
+  margin-top: 10px;
+}
+
+.promises .panel > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #E4E4E4;
+}
+
+.reviews {
+  margin-bottom: 120px;
+}
+
+.reviews > p {
+  max-width: 430px;
+  margin: 20px 0 50px;
+}
+
+.reviews .row {
+  gap: 30px;
+  align-items: stretch;
+}
+
+.reviews blockquote {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+  min-width: 0;
+  min-height: 340px;
+  padding: 30px;
+  color: #fff;
+  background-color: var(--dark);
+  background-position: center;
+  background-size: cover;
+}
+
+.reviews blockquote {
+  background-size: cover;
+  background-position: center;
+}
+.reviews blockquote:nth-child(1) {
+  background-image: url("../assets/img/review.png");
+}
+.reviews blockquote:nth-child(2) {
+  background-image: url("../assets/img/review-2.png");
+}
+.reviews blockquote:nth-child(3) {
+  background-image: url("../assets/img/review-3.png");
+}
+
+.reviews blockquote p {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.reviews cite {
+  font: italic 400 20px "Playfair Display", Georgia, serif;
+}/*# sourceMappingURL=main.css.map */
